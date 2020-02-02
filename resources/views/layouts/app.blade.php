@@ -10,8 +10,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+ 
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -19,6 +18,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+       .btn-info{
+           color:#fff;
+       }
+    </style>
+
+    @yield('css')
 </head>
 <body>
     <div id="app">
@@ -93,6 +99,13 @@
                      <a href="{{route('categories.index')}}">Categories</a>
                    </li>
                  </li>
+                  
+                  <ul class="list-group mt-5">
+                    <li class="list-group-item">
+                       <a href="{{ route('trashed-posts.index') }}">Trashed Posts</a>
+                    </li>
+                  </ul>
+                 
 
                </div>
                 
@@ -110,9 +123,12 @@
          @endauth
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
+     
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}"></script>
+
     @yield('scripts')
+
+      
 </body>
 </html>
